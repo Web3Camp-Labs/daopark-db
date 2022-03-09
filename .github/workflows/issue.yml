@@ -1,0 +1,24 @@
+name: issues actions
+
+on:
+  issues:
+    types:
+      - opened
+
+  workflow_dispatch:
+  
+jobs:
+ release:
+   name: Update content
+   runs-on: ubuntu-latest
+   steps:
+     - name: Update composer packages
+       uses: technote-space/create-pr-action@v2
+       with:
+         EXECUTE_COMMANDS: |
+           echo "new dao created" >> dao.json
+         COMMIT_MESSAGE: 'New DAO added'
+         COMMIT_NAME: 'GitHub Actions'
+         COMMIT_EMAIL: 'example@example.com'
+         PR_BRANCH_NAME: 'new-${PR_ID}'
+         PR_TITLE: 'Submite New DAO:'
