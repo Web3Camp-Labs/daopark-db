@@ -24,6 +24,7 @@ jobs:
           echo "new dao created" >> dao.json
           git add .
           git commit -m "branch-issue-${{ github.event.issue.number }}"
+          git push --set-upstream origin "branch-issue-${{ github.event.issue.number }}"
           
       - name: Creating Pull Request
         run: |
