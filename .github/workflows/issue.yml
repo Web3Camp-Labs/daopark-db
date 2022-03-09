@@ -22,6 +22,6 @@ jobs:
 
       - name: Creating Pull Request
         run: |
-          gh auth login --with-token "${{ secrets.PERSON_TOKEN }}"
+          echo "${{ secrets.PERSON_TOKEN }}" | gh auth login --with-token
           gh auth status
           gh pr create --title "Submite New DAO: ${{ github.event.issue.number }}" --body "PR automatically created" || echo ""
