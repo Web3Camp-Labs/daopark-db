@@ -2,8 +2,7 @@ name: issues actions
 
 on:
   issues:
-    types:
-      - opened
+    types: [opened, edited]
 
   pull_request:
     types: [opened, synchronize, reopened, closed]
@@ -21,5 +20,5 @@ jobs:
          COMMIT_MESSAGE: 'New DAO added'
          COMMIT_NAME: 'GitHub Actions'
          COMMIT_EMAIL: 'example@example.com'
-         PR_BRANCH_NAME: 'new-dao-${PR_NUMBER}'
-         PR_TITLE: 'Submite New DAO: ${PR_NUMBER}'
+         PR_BRANCH_NAME: 'new-dao-${{ github.event.issue.number }}'
+         PR_TITLE: 'Submite New DAO: ${{ github.event.issue.number }}'
