@@ -26,7 +26,7 @@ jobs:
           
       - name: Create content
         run: |
-          node index.js '${{ github.event.issue.body }}'
+          node index.js ${{ github.event.issue.number }} '${{ github.event.issue.body }}'
           
       - name: Commit changes
         run: |

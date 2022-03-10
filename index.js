@@ -4,9 +4,17 @@ async function main() {
 
   console.log("parse issue");
 
-  console.log("argv: ", process.argv.slice(2)[0]);
+  console.log("argv: ", process.argv.slice(2)[0], process.argv.slice(2)[1]);
 
-  let daojson = JSON.parse(fs.readFileSync("./dao.json", 'r'));
+  let issue_no = process.argv.slice(2)[0];
+  let issue_body = process.argv.slice(2)[1];
+
+  let added_daojson = JSON.parse(issue_body);
+  added_daojson['DAOIndex'] = issue_no;
+
+  let daojson = JSON.parse(fs.readFileSync("./dao.json", 'utf8'));
+
+  daojson.push(added_daojson);
 
   fs.writeFileSync(JSON.stringify(daojson, null, space=2));
 }
