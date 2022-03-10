@@ -16,7 +16,7 @@ async function main() {
 
   daojson.push(added_daojson);
 
-  fs.writeFileSync(JSON.stringify(daojson, null, 2));
+  fs.writeFileSync("./dao.json", JSON.stringify(daojson, null, 2), 'utf8');
 }
 
 (async function () {
