@@ -16,7 +16,7 @@ async function main() {
 
   daojson.push(added_daojson);
 
-  fs.writeFileSync(JSON.stringify(daojson, null, space=2));
+  fs.writeFileSync(JSON.stringify(daojson, null, 2));
 }
 
 (async function () {
