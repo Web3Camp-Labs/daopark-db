@@ -18,12 +18,18 @@ jobs:
         with:
           node-version: '14'
         
-      - name: Create Content
+      - name: Create Branch
         run: |
           git config --local user.name "Frozen"
           git config --local user.email "1884084+xrdavies@users.noreply.github.com"
           git checkout -b "branch-issue-${{ github.event.issue.number }}"
-          echo "new dao created" >> dao.json
+          
+      - name: Create content
+        run: |
+          node index.js '${{ github.event.issue.body }}'
+          
+      - name: Commit changes
+        run: |
           git add .
           git commit -m "branch-issue-${{ github.event.issue.number }}"
           git push --set-upstream origin "branch-issue-${{ github.event.issue.number }}"
