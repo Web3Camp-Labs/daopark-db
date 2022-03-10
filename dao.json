@@ -16,5 +16,23 @@
     "Website": "daotest.Website.com",
     "Email": "fdasf@gmail.com",
     "DAOIndex": "49"
+  },
+  {
+    "Name": "test3",
+    "Slug": "test3Slug",
+    "Tagline": "test3 Tagline ",
+    "Mission": "test3 Mission ",
+    "Values": "test3 Values ",
+    "Emoji": "( 🐭  , 🦊  )",
+    "TokenSymbol": "$ETH",
+    "TokenContractAddress": "0x33d3fF69E5967b3E6Cdc95206F1AbdF0709406F7",
+    "Logo": " https://img2.baidu.com/it/u=2850627813,1592506856&fm=253&fmt=auto&app=138&f=JPEG?w=682&h=500",
+    "CoverPhoto": "https://img1.baidu.com/it/u=3545445190,734941499&fm=253&fmt=auto&app=138&f=JPEG?w=512&h=307",
+    "Twitter": "test3 ",
+    "Discord": "test3 ",
+    "Mirror": "test3 mirror",
+    "Website": "test3.website",
+    "Email": "test3 @qqfdsa.com",
+    "DAOIndex": "53"
   }
 ]
