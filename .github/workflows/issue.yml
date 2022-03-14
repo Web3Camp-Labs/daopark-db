@@ -18,32 +18,32 @@ jobs:
         with:
           node-version: '14'
         
-#       - name: Create Branch
-#         run: |
-#           git config --local user.name "Frozen"
-#           git config --local user.email "1884084+xrdavies@users.noreply.github.com"
-#           git checkout -b "branch-issue-${{ github.event.issue.number }}"
+      - name: Create Branch
+        run: |
+          git config --local user.name "Frozen"
+          git config --local user.email "1884084+xrdavies@users.noreply.github.com"
+          git checkout -b "branch-issue-${{ github.event.issue.number }}"
           
-#       - name: Create content
-#         run: |
-#           node index.js ${{ github.event.issue.number }} '${{ github.event.issue.body }}'
+      - name: Create content
+        run: |
+          node index.js ${{ github.event.issue.number }} '${{ github.event.issue.body }}'
           
-#       - name: Commit changes
-#         run: |
-#           git add .
-#           git commit -m "branch-issue-${{ github.event.issue.number }}"
-#           git push --set-upstream origin "branch-issue-${{ github.event.issue.number }}"
+      - name: Commit changes
+        run: |
+          git add .
+          git commit -m "branch-issue-${{ github.event.issue.number }}"
+          git push --set-upstream origin "branch-issue-${{ github.event.issue.number }}"
           
-#       - name: Creating Pull Request
-#         run: |
-#           echo "${{ secrets.PERSON_TOKEN }}" | gh auth login --with-token
-#           gh auth status
-#           gh pr create --title "Submite New DAO: ${{ github.event.issue.number }}" --body "PR automatically created" || echo ""
+      - name: Creating Pull Request
+        run: |
+          echo "${{ secrets.PERSON_TOKEN }}" | gh auth login --with-token
+          gh auth status
+          gh pr create --title "Submite New DAO: ${{ github.event.issue.number }}" --body "PR automatically created" || echo ""
           
-      - name: Send to telegram
-        uses: appleboy/telegram-action@master
-        with:
-          to: ${{ secrets.TELEGRAM_TO }}
-          token: ${{ secrets.TELEGRAM_TOKEN }}
-          message: |
-            New Issue Created. ${{github.event.issue.html_url}}
+#       - name: Send to telegram
+#         uses: appleboy/telegram-action@master
+#         with:
+#           to: ${{ secrets.TELEGRAM_TO }}
+#           token: ${{ secrets.TELEGRAM_TOKEN }}
+#           message: |
+#             New Issue Created. ${{github.event.issue.html_url}}
