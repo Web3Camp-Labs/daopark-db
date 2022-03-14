@@ -39,3 +39,11 @@ jobs:
           echo "${{ secrets.PERSON_TOKEN }}" | gh auth login --with-token
           gh auth status
           gh pr create --title "Submite New DAO: ${{ github.event.issue.number }}" --body "PR automatically created" || echo ""
+          
+      - name: Send to telegram
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: |
+            New Issue Created. ${{github.event.issue.html_url}}
