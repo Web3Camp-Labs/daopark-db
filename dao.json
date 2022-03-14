@@ -34,5 +34,23 @@
     "Website": "test3.website",
     "Email": "test3 @qqfdsa.com",
     "DAOIndex": "53"
+  },
+  {
+    "Name": "OrangeDAOxyz",
+    "Slug": "Web3-Camp/test-issue",
+    "Tagline": "We invest in the future of web3. Our 🍊’s name is Juicy Returns.",
+    "Mission": "Orange DAO exists to support past, present, and aspiring Y Combinator founders who are building the future of the crypto ecosystem. We will distribute wealth, knowledge, access to power, control over resources, and participation in governance, to a broader group of people than ever before in a more equitable way than any previous system.",
+    "Values": "Orange DAO will measure success in the following ways:\n\nMembers are participating.\nMembership is growing.\nCrypto startups are supported by the DAO and its members.\nThe DAO financially supports its own operations.\nDocuments and code are created, amended, and published as lessons are learned.",
+    "Emoji": "🍊",
+    "TokenSymbol": "$ORANGE",
+    "TokenContractAddress": "0x33d3fF69E5967b3E6Cdc95206F1AbdF070940",
+    "Logo": "https://pbs.twimg.com/profile_images/1484585997220392964/UFSIss8t_400x400.png",
+    "CoverPhoto": "https://pbs.twimg.com/profile_banners/1438586226341150721/1631824938/600x200",
+    "Twitter": "OrangeDAOxyz",
+    "Discord": "OrangeDAOxyz",
+    "Mirror": "OrangeDAOxyzMirror",
+    "Website": "OrangeDAOxyz.com",
+    "Email": "OrangeDAOxyz@gmail.com",
+    "DAOIndex": "55"
   }
 ]
