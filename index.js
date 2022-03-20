@@ -7,16 +7,12 @@ async function main() {
   console.log("parse issue");
 
   // console.log("argv: ", process.argv.slice(2)[0], process.argv.slice(2)[1]);
+  let issue_no = process.argv.slice(2)[0];
+  let daojson = JSON.parse(process.argv.slice(2)[1]);
 
-  // let issue_no = process.argv.slice(2)[0];
-  // let issue_body = process.argv.slice(2)[1];
-
-  let tmpissue = JSON.parse(fs.readFileSync("./test-issue.json", 'utf8'));
-  let issue_no = tmpissue.issue_no;
-  let issue_body = tmpissue.issue_body;
-
-  // let daojson = JSON.parse(issue_body);
-  let daojson = issue_body;
+  // let tmpissue = JSON.parse(fs.readFileSync("./test-issue.json", 'utf8'));
+  // let issue_no = tmpissue.issue_no;
+  // let daojson = tmpissue.issue_body;
 
   daojson['DAOIndex'] = issue_no;
   daojson['DAOStatus'] = 'pending';
@@ -50,8 +46,6 @@ async function main() {
 
   let id = await db.add(daojson);
   console.log("Added DAO: ", id);
-
-  // fs.writeFileSync("./dao.json", JSON.stringify(daojson, null, 2), 'utf8');
 
   daojson['DAOStatus'] = 'approved';
   fs.writeFileSync(`${id}.tmp`, JSON.stringify(daojson, null, 2), 'utf8');
