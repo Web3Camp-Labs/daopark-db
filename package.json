@@ -5,5 +5,8 @@
   "type": "module",
   "repository": "https://github.com/Web3-Camp/test-issue.git",
   "author": "Frozen <1884084+xrdavies@users.noreply.github.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "github-keyvalue": "^1.0.0"
+  }
 }
