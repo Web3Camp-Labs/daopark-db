@@ -54,7 +54,7 @@ async function main() {
   // fs.writeFileSync("./dao.json", JSON.stringify(daojson, null, 2), 'utf8');
 
   daojson['DAOStatus'] = 'approved';
-  fs.writeFileSync('./tmp-dao.json', JSON.stringify(daojson, null, 2), 'utf8');
+  fs.writeFileSync(`${id}`, JSON.stringify(daojson, null, 2), 'utf8');
 }
 
 main()
