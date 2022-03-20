@@ -32,7 +32,7 @@ jobs:
           git checkout "db"
           git pull -r
           git checkout -b "branch-issue-${{ github.event.issue.number }}" "db"
-          for f in *.tmp; do echo $f | sed s/\.tmp//; done
+          for f in *.tmp; do mv $f `echo $f | sed s/\.tmp//`; done
           git add .
           git commit -m "branch-issue-${{ github.event.issue.number }}"
           git push --set-upstream origin "branch-issue-${{ github.event.issue.number }}"
