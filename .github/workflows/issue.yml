@@ -24,17 +24,15 @@ jobs:
           export PERSONAL_TOKEN=${{ secrets.PERSON_TOKEN }}
           node index.js ${{ github.event.issue.number }} '${{ github.event.issue.body }}'
         
-      - name: Create Branch
+      - name: Create Branch and Commit changes
         run: |
           git config --local user.name "Frozen"
           git config --local user.email "1884084+xrdavies@users.noreply.github.com"
           git fetch origin
           git checkout "db"
           git pull -r
-          git checkout -b "branch-issue-${{ github.event.issue.number }}"
-          
-      - name: Commit changes
-        run: |
+          git checkout -b "branch-issue-${{ github.event.issue.number }}" "db"
+          for f in *.tmp; do echo $f | sed s/\.tmp//; done
           git add .
           git commit -m "branch-issue-${{ github.event.issue.number }}"
           git push --set-upstream origin "branch-issue-${{ github.event.issue.number }}"
