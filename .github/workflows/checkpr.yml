@@ -24,5 +24,5 @@ jobs:
         git config --local user.name "Frozen"
         git config --local user.email "1884084+xrdavies@users.noreply.github.com"
         git add .
-        git commit -m "branch-issue-${{ github.event.issue.number }}"
+        git commit -m "merge-pr-${{ github.event.pull_request.number }}"
         git push --set-upstream origin "main"
