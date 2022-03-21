@@ -22,7 +22,7 @@ jobs:
         run: |
           yarn
           export PERSONAL_TOKEN=${{ secrets.PERSON_TOKEN }}
-          node index.js ${{ github.event.issue.number }} '${{ github.event.issue.body }}'
+          node new.js ${{ github.event.issue.number }} '${{ github.event.issue.body }}'
         
       - name: Create Branch and Commit changes
         run: |
