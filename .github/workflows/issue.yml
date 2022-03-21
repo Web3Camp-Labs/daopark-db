@@ -20,7 +20,7 @@ jobs:
           
       - name: Test Shell
         run: |
-          print('${{ github.event.issue.body }}')
+          print(${{ github.event.issue.body }})
 #          echo ${{ github.event.issue.number }} '${{ github.event.issue.body }}'
         shell: python3 {0}
           
