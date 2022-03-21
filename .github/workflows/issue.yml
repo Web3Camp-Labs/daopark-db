@@ -34,24 +34,24 @@ jobs:
           node new.js
           rm 'test-issue.json'
         
-#       - name: Create Branch and Commit changes
-#         run: |
-#           git config --local user.name "Frozen"
-#           git config --local user.email "1884084+xrdavies@users.noreply.github.com"
-#           git fetch origin
-#           git checkout "db"
-#           git pull -r
-#           git checkout -b "branch-issue-${{ github.event.issue.number }}" "db"
-#           for f in *.tmp; do mv $f `echo $f | sed s/\.tmp//`; done
-#           git add .
-#           git commit -m "branch-issue-${{ github.event.issue.number }}"
-#           git push --set-upstream origin "branch-issue-${{ github.event.issue.number }}"
+      - name: Create Branch and Commit changes
+        run: |
+          git config --local user.name "Frozen"
+          git config --local user.email "1884084+xrdavies@users.noreply.github.com"
+          git fetch origin
+          git checkout "db"
+          git pull -r
+          git checkout -b "branch-issue-${{ github.event.issue.number }}" "db"
+          for f in *.tmp; do mv $f `echo $f | sed s/\.tmp//`; done
+          git add .
+          git commit -m "branch-issue-${{ github.event.issue.number }}"
+          git push --set-upstream origin "branch-issue-${{ github.event.issue.number }}"
           
-#       - name: Creating Pull Request
-#         run: |
-#           echo "${{ secrets.PERSON_TOKEN }}" | gh auth login --with-token
-#           gh auth status
-#           gh pr create -H "branch-issue-${{ github.event.issue.number }}" -B "db" --title "Submite New DAO: ${{ github.event.issue.number }}" --body "PR automatically created. Related issue #${{ github.event.issue.number }}" || echo ""
+      - name: Creating Pull Request
+        run: |
+          echo "${{ secrets.PERSON_TOKEN }}" | gh auth login --with-token
+          gh auth status
+          gh pr create -H "branch-issue-${{ github.event.issue.number }}" -B "db" --title "Submite New DAO: ${{ github.event.issue.number }}" --body "PR automatically created. Related issue #${{ github.event.issue.number }}" || echo ""
           
 #       - name: Send to telegram
 #         uses: appleboy/telegram-action@master
