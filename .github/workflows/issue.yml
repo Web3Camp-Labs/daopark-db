@@ -17,31 +17,35 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '14'
-
-      - name: Create content
-        run: |
-          yarn
-          export PERSONAL_TOKEN=${{ secrets.PERSON_TOKEN }}
-          node new.js ${{ github.event.issue.number }} '${{ github.event.issue.body }}'
-        
-      - name: Create Branch and Commit changes
-        run: |
-          git config --local user.name "Frozen"
-          git config --local user.email "1884084+xrdavies@users.noreply.github.com"
-          git fetch origin
-          git checkout "db"
-          git pull -r
-          git checkout -b "branch-issue-${{ github.event.issue.number }}" "db"
-          for f in *.tmp; do mv $f `echo $f | sed s/\.tmp//`; done
-          git add .
-          git commit -m "branch-issue-${{ github.event.issue.number }}"
-          git push --set-upstream origin "branch-issue-${{ github.event.issue.number }}"
           
-      - name: Creating Pull Request
+      - name: Test Shell
         run: |
-          echo "${{ secrets.PERSON_TOKEN }}" | gh auth login --with-token
-          gh auth status
-          gh pr create -H "branch-issue-${{ github.event.issue.number }}" -B "db" --title "Submite New DAO: ${{ github.event.issue.number }}" --body "PR automatically created. Related issue #${{ github.event.issue.number }}" || echo ""
+          echo ${{ github.event.issue.number }} '${{ github.event.issue.body }}'
+
+#       - name: Create content
+#         run: |
+#           yarn
+#           export PERSONAL_TOKEN=${{ secrets.PERSON_TOKEN }}
+#           node new.js ${{ github.event.issue.number }} '${{ github.event.issue.body }}'
+        
+#       - name: Create Branch and Commit changes
+#         run: |
+#           git config --local user.name "Frozen"
+#           git config --local user.email "1884084+xrdavies@users.noreply.github.com"
+#           git fetch origin
+#           git checkout "db"
+#           git pull -r
+#           git checkout -b "branch-issue-${{ github.event.issue.number }}" "db"
+#           for f in *.tmp; do mv $f `echo $f | sed s/\.tmp//`; done
+#           git add .
+#           git commit -m "branch-issue-${{ github.event.issue.number }}"
+#           git push --set-upstream origin "branch-issue-${{ github.event.issue.number }}"
+          
+#       - name: Creating Pull Request
+#         run: |
+#           echo "${{ secrets.PERSON_TOKEN }}" | gh auth login --with-token
+#           gh auth status
+#           gh pr create -H "branch-issue-${{ github.event.issue.number }}" -B "db" --title "Submite New DAO: ${{ github.event.issue.number }}" --body "PR automatically created. Related issue #${{ github.event.issue.number }}" || echo ""
           
 #       - name: Send to telegram
 #         uses: appleboy/telegram-action@master
