@@ -1,6 +1,7 @@
 name: pr actions
 on:
   pull_request:
+    branches: [main, db]
     types: [closed]
 
 jobs:
