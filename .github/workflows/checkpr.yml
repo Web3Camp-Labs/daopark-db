@@ -1,3 +1,4 @@
+name: pr actions
 on:
   pull_request:
     types:
