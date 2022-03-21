@@ -19,6 +19,7 @@ jobs:
     - name: Merge DAO list and commit
       run: |
         yarn
+        export PERSONAL_TOKEN=${{ secrets.PERSON_TOKEN }}
         node merge.js
         git config --local user.name "Frozen"
         git config --local user.email "1884084+xrdavies@users.noreply.github.com"
