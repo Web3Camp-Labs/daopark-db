@@ -1,1 +1,20 @@
-{"Name":"new dao","Slug":"newdao","Github":"Web3-Camp/test-issuessss","Tagline":"new dao tagline","Mission":"new mission","Values":"new values","Emoji":"( 🐭  , 🦊  )","TokenSymbol":"$ETH","TokenContractAddress":"0x33d3fF69E5967b3E6Cdc95206F1AbdF0709406","Logo":"https://daocentral.com/_next/image?url=http%3A%2F%2Fres.cloudinary.com%2Fdaojones%2Fimage%2Fupload%2Fv1642533140%2Frksemqljxtackxqbnpto.jpg&w=1920&q=75","CoverPhoto":"https://daocentral.com/_next/image?url=http%3A%2F%2Fres.cloudinary.com%2Fdaojones%2Fimage%2Fupload%2Fv1637745365%2Fgyqst24nyu7wzmwxsocm.png&w=1920&q=75","Twitter":"srdothub","Discord":"daotest2Discord","Mirror":"daoMirror","Website":"daotest2.Website.com","Email":"fdasf@gmail.com","DAOIndex":"76","DAOStatus":"pending"}
+{
+  "Name": "new dao",
+  "Slug": "newdao",
+  "Github": "Web3-Camp/test-issuessss",
+  "Tagline": "new dao tagline",
+  "Mission": "new mission",
+  "Values": "new values",
+  "Emoji": "( 🐭  , 🦊  )",
+  "TokenSymbol": "$ETH",
+  "TokenContractAddress": "0x33d3fF69E5967b3E6Cdc95206F1AbdF0709406",
+  "Logo": "https://daocentral.com/_next/image?url=http%3A%2F%2Fres.cloudinary.com%2Fdaojones%2Fimage%2Fupload%2Fv1642533140%2Frksemqljxtackxqbnpto.jpg&w=1920&q=75",
+  "CoverPhoto": "https://daocentral.com/_next/image?url=http%3A%2F%2Fres.cloudinary.com%2Fdaojones%2Fimage%2Fupload%2Fv1637745365%2Fgyqst24nyu7wzmwxsocm.png&w=1920&q=75",
+  "Twitter": "srdothub",
+  "Discord": "daotest2Discord",
+  "Mirror": "daoMirror",
+  "Website": "daotest2.Website.com",
+  "Email": "fdasf@gmail.com",
+  "DAOIndex": "76",
+  "DAOStatus": "approved"
+}
