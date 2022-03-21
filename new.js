@@ -7,12 +7,12 @@ async function main() {
   console.log("parse issue");
 
   // console.log("argv: ", process.argv.slice(2)[0], process.argv.slice(2)[1]);
-  let issue_no = process.argv.slice(2)[0];
-  let daojson = JSON.parse(process.argv.slice(2)[1]);
+  // let issue_no = process.argv.slice(2)[0];
+  // let daojson = JSON.parse(process.argv.slice(2)[1]);
 
-  // let tmpissue = JSON.parse(fs.readFileSync("./test-issue.json", 'utf8'));
-  // let issue_no = tmpissue.issue_no;
-  // let daojson = tmpissue.issue_body;
+  let tmpissue = JSON.parse(fs.readFileSync("./test-issue.json", 'utf8'));
+  let issue_no = tmpissue.issue_no;
+  let daojson = tmpissue.issue_body;
 
   daojson['DAOIndex'] = issue_no;
   daojson['DAOStatus'] = 'pending';
