@@ -7,7 +7,7 @@ async function main() {
   let alldaos = await db.list();
   console.log(alldaos);
 
-  let approvedList = alldaos.fitler((item) => {return item.data.DAOStatus == 'approved'}).map((item) => { return item.data});
+  let approvedList = alldaos.filter((item) => {return item.data.DAOStatus == 'approved'}).map((item) => { return item.data});
   fs.writeFileSync("dao.json", JSON.stringify(approvedList, null, 2), 'utf8');
 }
 
