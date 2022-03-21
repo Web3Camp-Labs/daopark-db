@@ -8,5 +8,20 @@ jobs:
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
-    - run: |
-        echo The PR was merged
+     - name: Checkout
+        uses: actions/checkout@v2
+        
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Merge DAO list and commit
+        run: |
+          yarn
+          node merge.js
+          git config --local user.name "Frozen"
+          git config --local user.email "1884084+xrdavies@users.noreply.github.com"
+          git add .
+          git commit -m "branch-issue-${{ github.event.issue.number }}"
+          git push --set-upstream origin "main"
