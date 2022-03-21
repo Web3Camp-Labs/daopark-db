@@ -18,17 +18,21 @@ jobs:
         with:
           node-version: '14'
           
-      - name: Test Shell
+      - name: Store issue
         run: |
-          console.log(${{ github.event.issue.body }})
-        shell: node {0}
+          import json
+          issue = {'issue_no': ${{ github.event.issue.number }}, 'issue_body': ${{ github.event.issue.body }}}
+          with open('test-issue.json', 'w') as outfile:
+            json.dump(issue, outfile)
+        shell: python3 {0}
           
 
       - name: Create content
         run: |
           yarn
           export PERSONAL_TOKEN=${{ secrets.PERSON_TOKEN }}
-          node new.js ${{ github.event.issue.number }} '${{ github.event.issue.body }}'
+          node new.js
+          rm 'test-issue.json'
         
 #       - name: Create Branch and Commit changes
 #         run: |
