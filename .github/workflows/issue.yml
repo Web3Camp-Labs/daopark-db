@@ -20,7 +20,7 @@ jobs:
           
       - name: Test Shell
         run: |
-          echo ${{ github.event.issue.number }} `${{ github.event.issue.body }}`
+          echo ${{ github.event.issue.number }} `echo ${{ github.event.issue.body }}`
 
 #       - name: Create content
 #         run: |
