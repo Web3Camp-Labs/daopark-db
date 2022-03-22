@@ -38,5 +38,25 @@
     "Email": "fdasf@gmail.com",
     "DAOIndex": "60",
     "DAOStatus": "approved"
+  },
+  {
+    "Name": "Pleasr DAO",
+    "Slug": "pleasr",
+    "Github": "Web3-Camp/Web3-Camp.github.io",
+    "Tagline": "Acquiring culturally significant pieces with a charitable twist",
+    "Mission": "Our mission is to buy and fund culturally significant pieces and then create something fundamentally additive to the soul of the piece before sharing it back with the community.",
+    "Values": "Protect our culture at all costs\nDiversity",
+    "Emoji": "( 🐭  , 🐹  )",
+    "TokenSymbol": "$PEEPS",
+    "TokenContractAddress": "0x33d3fF69E5967b3E6Cdc95206F1AbdF070940",
+    "Logo": "https://daocentral.com/_next/image?url=http%3A%2F%2Fres.cloudinary.com%2Fdaojones%2Fimage%2Fupload%2Fv1643585319%2Ffzd9ynomsv38hovwhlrc.jpg&w=1920&q=75",
+    "CoverPhoto": "https://daocentral.com/_next/image?url=http%3A%2F%2Fres.cloudinary.com%2Fdaojones%2Fimage%2Fupload%2Fv1637743458%2Fzck20kzjidjswosrzo3f.jpg&w=1920&q=75",
+    "Twitter": "PleasrDAO",
+    "Discord": "thedogenft",
+    "Mirror": "daotest2Mirror",
+    "Website": "https://pleasr.org/",
+    "Email": "fdasf@gmail.com",
+    "DAOIndex": 85,
+    "DAOStatus": "approved"
   }
 ]
