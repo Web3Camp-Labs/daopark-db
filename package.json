@@ -10,6 +10,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "github-keyvalue": "^1.0.0"
+    "github-keyvalue": "^1.0.0",
+    "octokit": "^1.7.1"
   }
 }

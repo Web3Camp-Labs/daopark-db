@@ -1,6 +1,6 @@
 import * as fs from 'fs';
 import 'dotenv/config';
-import { Octokit } from './octkit';
+import { Octokit } from './octokit';
 import { GithubKV } from "github-keyvalue";
 
 async function main() {
