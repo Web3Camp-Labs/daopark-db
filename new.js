@@ -32,10 +32,11 @@ async function main() {
   let notfound = true;
   for (let item of alldaos) {
     let dao = item.data;
-    if (dao.TokenContractAddress == daojson.TokenContractAddress
-      || dao.Github == daojson.Github
-      || dao.Name == daojson.Name
-      || dao.Website == daojson.Website) {
+    // if (dao.TokenContractAddress == daojson.TokenContractAddress ||
+    if (
+      dao.Github == daojson.Github ||
+      dao.Name == daojson.Name ||
+      dao.Website == daojson.Website) {
       notfound = false;
       break;
     }
