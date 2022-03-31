@@ -1,21 +1,22 @@
 import * as fs from 'fs';
 import 'dotenv/config';
+import { Octokit } from './octkit';
 import { GithubKV } from "github-keyvalue";
 
 async function main() {
 
   console.log("parse issue");
 
-  // console.log("argv: ", process.argv.slice(2)[0], process.argv.slice(2)[1]);
-  // let issue_no = process.argv.slice(2)[0];
-  // let daojson = JSON.parse(process.argv.slice(2)[1]);
-
-  let tmpissue = JSON.parse(fs.readFileSync("./test-issue.json", 'utf8'));
-  let issue_no = tmpissue.issue_no;
+  let tmpissue = JSON.parse(fs.readFileSync("./tmp-issue.json", 'utf8'));
+  let issue_number = tmpissue.issue_no;
   let daojson = tmpissue.issue_body;
 
-  daojson['DAOIndex'] = issue_no;
+  daojson['DAOIndex'] = issue_number;
   daojson['DAOStatus'] = 'pending';
+
+  let owner = 'web3-camp';
+  let repo = 'test-issue';
+  let branch = 'db';
 
   // check if the dao is already in the list
   // If one of the following field conflicts, the dao is already in the list
@@ -23,10 +24,11 @@ async function main() {
   // Github
   // OrangeDAO
   // Website
-  let db = new GithubKV({ token: process.env.PERSONAL_TOKEN, owner: 'web3-camp', repo: 'test-issue', branch: 'db' });
+  let db = new GithubKV({ token: process.env.PERSONAL_TOKEN, owner, repo, branch });
   let alldaos = await db.list();
   console.log(alldaos);
 
+  // check if dao already existed!
   let notfound = true;
   for (let item of alldaos) {
     let dao = item.data;
@@ -40,6 +42,13 @@ async function main() {
   }
 
   if (!notfound) {
+    let octokit = new Octokit({ auth: `${process.env.PERSONAL_TOKEN}` });
+    await octokit.rest.issues.createComment({
+      owner,
+      repo,
+      issue_number,
+      body: `Your DAO is already in the list. Please check the list and resubmit.`
+    });
     console.log("DAO already in the list");
     return;
   }

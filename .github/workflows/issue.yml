@@ -22,7 +22,7 @@ jobs:
         run: |
           import json
           issue = {'issue_no': ${{ github.event.issue.number }}, 'issue_body': ${{ github.event.issue.body }}}
-          with open('test-issue.json', 'w') as outfile:
+          with open('tmp-issue.json', 'w') as outfile:
             json.dump(issue, outfile)
         shell: python3 {0}
           
@@ -32,7 +32,7 @@ jobs:
           yarn
           export PERSONAL_TOKEN=${{ secrets.PERSON_TOKEN }}
           node new.js
-          rm 'test-issue.json'
+          rm 'tmp-issue.json'
         
       - name: Create Branch and Commit changes
         run: |
