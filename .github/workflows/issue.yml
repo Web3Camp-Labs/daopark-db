@@ -53,10 +53,10 @@ jobs:
           gh auth status
           gh pr create -H "branch-issue-${{ github.event.issue.number }}" -B "db" --title "Submite New DAO: ${{ github.event.issue.number }}" --body "PR automatically created. Related issue #${{ github.event.issue.number }}" || echo ""
           
-#       - name: Send to telegram
-#         uses: appleboy/telegram-action@master
-#         with:
-#           to: ${{ secrets.TELEGRAM_TO }}
-#           token: ${{ secrets.TELEGRAM_TOKEN }}
-#           message: |
-#             New Issue Created. ${{github.event.issue.html_url}}
+      - name: Send to telegram
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: |
+            New Issue Created. ${{github.event.issue.html_url}}
